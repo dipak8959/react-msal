@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+===============================
+Running with Docker
+
+docker build -t react-msal-docker-image .
+
+docker run -p 3000:3000 react-msal-docker-image
+===============================
 ## Available Scripts
 
 In the project directory, you can run:
