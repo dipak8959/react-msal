@@ -24,10 +24,11 @@ jobs:
           echo "LATEST_BRANCH=$LATEST_BRANCH" >> $GITHUB_ENV
           
       - name: Validate latest branch
-        run: if [ -z "${{ env.LATEST_BRANCH }}" ]; then
-               echo "Error: No release branch found."
-               exit 1
-             fi
+        run: |
+          if [ -z "${{ env.LATEST_BRANCH }}" ]; then
+            echo "Error: No release branch found."
+            exit 1
+          fi
              
       - name: Checkout latest release branch
         run: |
