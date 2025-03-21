@@ -35,8 +35,8 @@ jobs:
              
       - name: Checkout latest release branch
         run: |
-          if git show-ref --verify --quiet refs/heads/${{ env.LATEST_BRANCH }}; then
-            git checkout ${{ env.LATEST_BRANCH }}
+          if git ls-remote --exit-code --heads origin/${{ env.LATEST_BRANCH }}; then
+            git checkout -b ${{ env.LATEST_BRANCH }} origin/${{ env.LATEST_BRANCH }}
           else
             echo "Error: Branch ${{ env.LATEST_BRANCH }} does not exist."
             exit 1
